@@ -1,1 +1,3 @@
 # Sparse-transformer
+This is a implementation of Sparse attention transformer in which the vanilla attention modeule is replaced by local windowed attention model. Local attention model has the advantages of reducing the quadratic complexity of vanilla attention model to nearly linear. This reduces the FLOPs to the computations from order (N^2*d) to order (N*sqrt(N)*d). For example, for the same problem solved in my repositery () the vanialla transformer takes 800 seconds to solve 500 iteration, while the sparse local transformer takes 170 seconds on GPU RTXA6000. This allows trainig larger sequences in less computations time and therefore increase the model accuracy.
+
